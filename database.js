@@ -1,0 +1,20 @@
+
+require('dotenv').config();
+
+const mongoose = require('mongoose');
+
+//const connectionStr = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.7e1ierx.mongodb.net/profile?retryWrites=true&w=majority`;
+mongoose.connect(process.env.MONGODB_USERNAME).then(() => {
+
+    console.log("Connected to MongoDB");
+
+}).catch((error) => {
+    console.log(error.message);
+})
+// mongoose.connect(connectionStr, {useNewUrlparser: true})
+// .then(() => console.log('connected to mongodb'))
+// .catch(err => console.log(err))
+
+// mongoose.connection.on('error', err => {
+//   console.log(err)
+  
